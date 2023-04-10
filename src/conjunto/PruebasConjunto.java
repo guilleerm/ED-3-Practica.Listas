@@ -46,6 +46,18 @@ public class PruebasConjunto {
         conjunto2.mostrar();
         System.out.println("Es igual que el conjunto de trabajo? " + conjunto.equals(conjunto2));
 
+        //6
+
+        Conjunto conjunto3= new Conjunto();
+        conjunto3.insertar(4);
+        conjunto3.insertar(5);
+        Algoritmos algoritmos= new Algoritmos();
+
+        System.out.print("La interseccion de ");
+        conjunto3.mostrar();
+        System.out.println(" con el de trabajo es:");
+        algoritmos.interseccion(conjunto2, conjunto3).mostrar();
+
 
 
 
