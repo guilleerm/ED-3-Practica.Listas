@@ -45,11 +45,6 @@ public class Producto {
                 precio == producto.precio;
     }
 
-
-
-
-
-
     public boolean equals(Object obj) {
         return this.equals((Producto)obj);
     }

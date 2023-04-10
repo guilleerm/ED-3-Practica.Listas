@@ -99,27 +99,57 @@ public class Conjunto {
 
 
     public int[] toArray() {
-        // Completar
-        return null;   // Línea puesta para evitar error. Eliminarla al codificar el método
+        int[] array= new int[numElementos];
+        Nodo actual = inicio;
+        int i= 0;
+        while (actual!= null){
+            array[i]= actual.getDato();
+            actual=actual.getSiguiente();
+            i++;
+        }
+        return array;
     }
 
 
     public int mayor() {
-        // Completar
-        return 0;   // Línea puesta para evitar error. Eliminarla al codificar el método
+        Nodo actual = inicio;
+        int mayor=0;
+        if(!vacio()){
+            while(actual!=null){
+                if(mayor<actual.getDato())
+                    mayor= actual.getDato();
+                actual=actual.getSiguiente();
+            }
+        }else return -1;
+
+        return mayor;
     }
 
     public Conjunto subconjunto(int inferior, int superior) {
-        // Completar
-        return null;   // Línea puesta para evitar error. Eliminarla al codificar el método
+        Conjunto subconjunto = new Conjunto();
+        Nodo actual = inicio;
+        while (actual != null && actual.getDato() <= superior) {
+            if (actual.getDato() >= inferior) {
+                subconjunto.insertar(actual.getDato());
+            }
+            actual = actual.getSiguiente();
+        }
+        return subconjunto;
     }
 
     public boolean equals(Conjunto conjunto) {
-        // Completar
-        return true;   // Línea puesta para evitar error. Eliminarla al codificar el método
+        if (this.numElementos != conjunto.getNumElementos()) {
+            return false;
+        }
+        Nodo actual1 = this.inicio;
+        Nodo actual2 = conjunto.inicio;
+        while (actual1 != null) {
+            if (actual1.getDato() != actual2.getDato()) {
+                return false;
+            }
+            actual1 = actual1.getSiguiente();
+            actual2 = actual2.getSiguiente();
+        }
+        return true;
     }
-
-
-
-
 }
